@@ -11,6 +11,7 @@
     <div class="container">
         <button onclick="mostrar_impresoras()">Mostrar Impresoras</button><br><br><br>
         <button onclick="imprimir()">Imprimir</button>
+        <button onclick="imprimirWindow()">window print</button>
 
     </div>
 
@@ -18,6 +19,11 @@
 
     </div>
     <script>
+
+        function imprimirWindow(){
+            window.print()
+        }
+
         let impresorasHTML = document.querySelector("#impresoras")
         let data = []
         function mostrar_impresoras(){
@@ -35,7 +41,7 @@
 
 
         async function imprimir(){
-            let nombreImpresora = "IT01";
+            let nombreImpresora = "POS-58";
             let api_key = "a449139e-07b5-40e9-c084-943d4209d91e"
             
             const conector = new connetor_plugin()
