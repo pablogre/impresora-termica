@@ -14,12 +14,22 @@
 
     </div>
 
+    <div id="impresoras">
 
+    </div>
     <script>
+        let impresorasHTML = document.querySelector("#impresoras")
+        let data = []
         function mostrar_impresoras(){
             connetor_plugin.obtenerImpresoras()
                         .then(impresoras => {                    
-                         console.log(impresoras)
+                         data=impresoras;
+                         data.forEach(d => {
+                            let div = document.createElement("div")
+                            div.innerHTML=`${d}`;
+                            impresorasHTML.appendChild(div)
+                         });
+
                         });
         }
 
